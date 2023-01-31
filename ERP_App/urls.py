@@ -1,5 +1,5 @@
 from django.urls import path, include
-
+from . import views
 urlpatterns = [
-    # path('', include('ERP_App.urls')),
+    path('', views.demo, name="index"),
 ]
