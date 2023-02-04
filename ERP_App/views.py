@@ -11,11 +11,14 @@ def index(request):
     categories = Category.objects.all()
     items = Item.objects.all()
     context = {"items": items, 'categories': categories}
-    return render(request, 'index.html', context)
+    return render(request, 'home.html', context)
 
 
-def books(request):
-    return render(request, 'books.html')
+def items(request):
+    categories = Category.objects.all()
+    items = Item.objects.all()
+    context = {"items": items, 'categories': categories}
+    return render(request, 'items.html', context)
 
 # def update(request):
 #     return render(request, 'update.html')

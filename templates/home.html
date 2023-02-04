@@ -7,13 +7,9 @@
 <div style="direction: rtl;" class="wrapper">
 
 
-
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-
-
     <!--الاحصائيات-->
     <div class="content">
       <div class="container-fluid">
@@ -64,7 +60,7 @@
 
                 <div class="d-flex flex-row justify-content-end">
                   <span class="mr-2">
-                    <i class="fas fa-square text-primary"></i> الاربح من بيع الكتب
+                    <i class="fas fa-square text-primary"></i> الارباح من بيع الكتب
                     <p id="soldtotals"></p>
                   </span>
                   <span>
@@ -87,7 +83,7 @@
 
         <div id="bookform" class="card card-primary collapse">
           <div class="card-header">
-            <h3 class="card-title">اضافة كتاب</h3>
+            <h3 class="card-title">اضافة صنف</h3>
           </div>
           <!-- /.card-header -->
           <!-- form start -->
@@ -117,9 +113,9 @@
       <div class="row justify-content-center mb-3">
         <div class="col-4 ">
           <ul class="nav">
-            {%for category in categories|slice:'8' %}
+            {%for cat in categories|slice:'8' %}
             <li class="nav-item ">
-              <a id="" class="nav-link bg-primary" href="#">{{category.name}}</a>
+              <a id="" class="nav-link bg-primary" href="#">{{cat.name}}</a>
             </li>
             {%endfor%}
           </ul>
@@ -147,8 +143,7 @@
               </div>
             </div>
 
-            <div style="background:url({{item.item_img.url}}) ; background-size:cover"
-              class="widget-user-header bg-info">
+            <div  class="widget-user-header bg-info">
               <h3 color="black" class="widget-user-username">{{item.name}}</h3>
               <h5 class="widget-user-desc">{{item.brand}}</h5>
             </div>
