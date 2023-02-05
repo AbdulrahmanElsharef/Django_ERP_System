@@ -1,18 +1,20 @@
 from django.db import models
 
 # Create your models here.
+
+
 class Category(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
 
-class Item(models.Model):
 
+class Item(models.Model):
     status_item = [
-        ('available', 'available'),
-        ('sold', 'sold'),
-        ('soon', 'soon'),
+        ('Available', 'Available'),
+        ('Sold', 'Sold'),
+        ('Soon', 'Soon'),
     ]
     name = models.CharField(max_length=200)
     brand = models.CharField(max_length=150)
@@ -33,6 +35,3 @@ class Item(models.Model):
 
     def __str__(self):
         return self.name
-
-
-
