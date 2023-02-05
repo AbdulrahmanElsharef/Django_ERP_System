@@ -1,4 +1,5 @@
 {% load static %}
+{% load bootstrap %}
 <!DOCTYPE html>
 <html lang="ar">
 
@@ -77,36 +78,51 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="add" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                New Items
+                ALL Items
               </p>
             </a>
           </li>
+          <!-- <li style="cursor: pointer;" class="nav-item">
+            <a id="statusSold" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text"></p> SOLD</p>
+            </a>
+          </li>
+          <li style="cursor: pointer;" class="nav-item">
+            <a id="" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p>SOON</p>
+            </a>
+          </li>
+          <li style="cursor: pointer;" class="nav-item">
+            <a id="" class="nav-link">
+              <i class="nav-icon far fa-circle text-info"></i>
+              <p>Available</p>
+            </a>
+          </li> -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Category
                 <i class="fas fa-angle-left right"></i>
-
               </p>
             </a>
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a id="addcat" href="#" class="nav-link">
-                  <i class="fa fa-plus "></i>
-                  <p class="text-light"> Add New </p>
-                </a>
+
+
+                <p class="text-light"> Add Category </p>
+
               </li>
               <form id="cat" method="POST">
-
-                <input type="text" class="form-control">
-
-                <button type="submit" class="btn btn-success">save</button>
-                <button id="backcat" class="btn btn-primary ">back</button>
+                {% csrf_token %}
+                {{ form_cat|bootstrap }}
+                <button type="submit" value="submit" class="btn btn-success">Add New</button>
               </form>
               {%for cat in categories %}
               <li style="cursor: pointer;" class="nav-item">
@@ -118,27 +134,6 @@
               {%endfor%}
 
             </ul>
-          </li>
-
-          <li class="nav-header">الكتب المستعارة</li>
-
-          <li style="cursor: pointer;" class="nav-item">
-            <a id="statusSold" class="nav-link">
-              <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">تم بيعه</p>
-            </a>
-          </li>
-          <li style="cursor: pointer;" class="nav-item">
-            <a id="" class="nav-link">
-              <i class="nav-icon far fa-circle text-warning"></i>
-              <p>تم استعارته</p>
-            </a>
-          </li>
-          <li style="cursor: pointer;" class="nav-item">
-            <a id="" class="nav-link">
-              <i class="nav-icon far fa-circle text-info"></i>
-              <p>متاح</p>
-            </a>
           </li>
         </ul>
       </nav>
